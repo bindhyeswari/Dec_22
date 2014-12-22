@@ -35,15 +35,25 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            var start = new Date();
-            var arr_of_primes = [];
-            printPrimes(document.body, generatePrimes(100000));
-            console.log((new Date()) - start + 'ms');
+
+            document.body.firstElementChild.addEventListener('click', function () {
+                document.getElementById('message').innerHTML = 'Updated data';
+            });
+
+            document.body.children[1].addEventListener('click', function () {
+                var start = new Date();
+                var arr_of_primes = [];
+                printPrimes(document.getElementById('results'), generatePrimes(100000));
+                console.log((new Date()) - start + 'ms');
+            });
         });
 
     </script>
 </head>
 <body>
-
+    <button>Update The Div</button>
+    <button>Calculate Primes</button>
+    <div id="message"></div>
+    <div id="results"></div>
 </body>
 </html>
