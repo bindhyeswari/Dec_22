@@ -6,21 +6,39 @@
     <script>
 
         function isPrime(num) {
-            return true
+            for (var i = 2, len = Math.sqrt(num); i <= len; i++) {
+                if ( num % i < 1 ) return false;
+            }
+            return true;
         }
 
+        console.log(isPrime(2));
+        console.log(isPrime(3));
+        console.log(isPrime(10));
+
         function generatePrimes(numOfPrimes) {
-            // isPrime
-            return [];
+            var primesArr = [];
+            var counter = 2;
+            while (primesArr.length < numOfPrimes) {
+                if (isPrime(counter)) {
+                    primesArr.push(counter);
+                }
+                counter++;
+            }
+            return primesArr;
         }
+
+        console.log(generatePrimes(10));
 
         function printPrimes(domElement, primesArray) {
             domElement.innerHTML = primesArray.join(', ');
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            var start = new Date();
             var arr_of_primes = [];
-            printPrimes(document.body, generatePrimes(1000));
+            printPrimes(document.body, generatePrimes(100000));
+            console.log((new Date()) - start + 'ms');
         });
 
     </script>
