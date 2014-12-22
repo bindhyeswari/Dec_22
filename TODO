@@ -3,3 +3,11 @@
 Web Workers
 
 1. Write code to print out 1000 primes onto the page. isPrime(), printPrimes(), generatePrimes()
+
+2. Write a twitter feed based on web workers which shows the latest tweets
+
+
+Reference for the test
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/basic_usage
+http://dev.w3.org/geo/api/spec-source.html - READ ONLY Section 5
+http://www.w3.org/TR/webstorage/#the-storage-interface 4.1, 4.3, 4.4, 5

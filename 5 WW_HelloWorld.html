@@ -12,6 +12,10 @@
             console.log('Message from woker: ' + event.data);
         });
 
+        worker.addEventListener('error', function (event) {
+            console.log('There was an error!');
+        });
+
         console.log('Sending message');
         worker.postMessage('Hello');
 

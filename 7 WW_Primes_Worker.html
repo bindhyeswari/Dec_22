@@ -7,6 +7,7 @@
     <script>
 
         var worker = new Worker('PrimesWorker.js');
+        console.log(worker);
 
         worker.addEventListener('message', function (event) { // event.data = 'Got your message'
             var end = new Date();
@@ -18,6 +19,9 @@
         var start = new Date();
         worker.postMessage(100000);
 
+    </script>
+    <script>
+        console.log(isPrime(10));
     </script>
 </head>
 <body>

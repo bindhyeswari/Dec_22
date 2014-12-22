@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // print all keys of localStorage
+
+        for (var i = 0, len = localStorage.length; i < len; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage[key];
+            console.log(key, ', ', value);
+        }
+
+        // for deleting a key, use removeItem
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.firstElementChild.addEventListener('click', function () {
+                // delete all keys
+                for (var i = 0, len = localStorage.length; i < len; i++) {
+                    var key = localStorage.key(i);
+                    localStorage.removeItem(key);
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <button>Clear All Keys</button>
+</body>
+</html>

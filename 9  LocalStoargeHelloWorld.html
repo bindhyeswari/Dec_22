@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        console.log(JSON.parse(localStorage.getItem('evan')));
+
+        window.addEventListener('storage', function (event) {
+            console.log(event);
+        });
+
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
