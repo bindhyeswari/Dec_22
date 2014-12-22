@@ -9,11 +9,14 @@
         var worker = new Worker('PrimesWorker.js');
 
         worker.addEventListener('message', function (event) { // event.data = 'Got your message'
-            console.log('Message from woker: ' + event.data);
+            var end = new Date();
+            document.body.innerHTML = event.data.join(', ');
+            console.log('Time taken: ' + (end - start) + 'ms');
         });
 
-        console.log('Sending message');
-        worker.postMessage('Hello');
+        console.log('Sending message to calculate primes ... ');
+        var start = new Date();
+        worker.postMessage(100000);
 
     </script>
 </head>
