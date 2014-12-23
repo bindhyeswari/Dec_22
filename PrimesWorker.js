@@ -18,6 +18,5 @@ function isPrime(num) {
 }
 
 self.addEventListener('message', function (event) { // event.data = 'Hello'
-    document.body.innerHTML = 'asdf';
     self.postMessage(generatePrimes(event.data));
 });
